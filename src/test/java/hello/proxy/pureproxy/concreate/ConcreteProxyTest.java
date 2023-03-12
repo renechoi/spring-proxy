@@ -2,6 +2,7 @@ package hello.proxy.pureproxy.concreate;
 
 import hello.proxy.pureproxy.concreate.code.ConcreteClient;
 import hello.proxy.pureproxy.concreate.code.ConcreteLogic;
+import hello.proxy.pureproxy.concreate.code.TimeProxy;
 import org.junit.jupiter.api.Test;
 
 public class ConcreteProxyTest {
@@ -12,5 +13,13 @@ public class ConcreteProxyTest {
         ConcreteClient client = new ConcreteClient(concreteLogic);
         client.execute();
 
+    }
+
+    @Test
+    void addProxy() {
+        ConcreteLogic concreteLogic = new ConcreteLogic();
+        TimeProxy timeProxy = new TimeProxy(concreteLogic);
+        ConcreteClient client = new ConcreteClient(timeProxy);
+        client.execute();
     }
 }

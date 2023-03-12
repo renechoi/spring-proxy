@@ -2,6 +2,7 @@ package hello.proxy.pureproxy.concreate.code;
 
 public class ConcreteClient {
     private ConcreteLogic concreteLogic;
+
     public ConcreteClient(ConcreteLogic concreteLogic) {
         this.concreteLogic = concreteLogic;
     }
